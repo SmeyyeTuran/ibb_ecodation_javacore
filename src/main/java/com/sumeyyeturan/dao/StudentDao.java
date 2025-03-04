@@ -275,21 +275,24 @@ public class StudentDao implements IDaoGenerics<StudentDto> {
     // Öğrenci Güncelle
     @Override
     public StudentDto update(int id, StudentDto studentDto) {
-        for (StudentDto temp : studentDtoList) {
-            if (temp.getId() == id) {
-                temp.setName(studentDto.getName());
-                temp.setSurname(studentDto.getSurname());
-                temp.setBirthDate(studentDto.getBirthDate());
-                temp.setMidTerm(studentDto.getMidTerm());
-                temp.setFinalTerm(studentDto.getFinalTerm());
-                temp.setResultTerm(temp.getMidTerm() * 0.4 + temp.getFinalTerm() * 0.6);
-                temp.seteStudentType(studentDto.geteStudentType());
-                // Güncellenmiş Öğrenci Bilgileri
-                System.out.println(SpecialColor.BLUE + temp + " Öğrenci Bilgileri Güncellendi" + SpecialColor.RESET);
-                // Dosyaya kaydet
-                saveToFile();
-                return temp;
-            }
+        try{
+            for (StudentDto temp : studentDtoList) {
+                if (temp.getId() == id) {
+                    temp.setName(studentDto.getName());
+                    temp.setSurname(studentDto.getSurname());
+                    temp.setBirthDate(studentDto.getBirthDate());
+                    temp.setMidTerm(studentDto.getMidTerm());
+                    temp.setFinalTerm(studentDto.getFinalTerm());
+                    temp.setResultTerm(temp.getMidTerm() * 0.4 + temp.getFinalTerm() * 0.6);
+                    temp.seteStudentType(studentDto.geteStudentType());
+                    // Güncellenmiş Öğrenci Bilgileri
+                    System.out.println(SpecialColor.BLUE + temp + " Öğrenci Bilgileri Güncellendi" + SpecialColor.RESET);
+                    // Dosyaya kaydet
+                    saveToFile();
+                    return temp;
+                }
+            }} catch (Exception e){
+            e.printStackTrace();
         }
         throw new StudentNotFoundException("Öğrenci bulunamadı.");
     }
@@ -381,7 +384,6 @@ public class StudentDao implements IDaoGenerics<StudentDto> {
             }
         }
     }
-
 
     /// ///////////////////////////////////////////////////////////////////////
     /// Student Add
@@ -605,7 +607,7 @@ public class StudentDao implements IDaoGenerics<StudentDto> {
 
     // Exit
     public void chooiseExit() {
-        System.out.println("Sistemden çıkılıyooo...");
+        System.out.println("Sistemden çıkılıyor...");
         scanner.close();
         return;
     }
