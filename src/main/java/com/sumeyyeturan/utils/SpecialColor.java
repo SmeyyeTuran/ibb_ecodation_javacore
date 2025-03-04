@@ -15,4 +15,6 @@ public class SpecialColor {
     public static final String BLUE = "\033[34m";  // Mavi
     public static final String PURPLE = "\033[35m";// Mor
     public static final String CYAN = "\033[36m";  // Açık Mavi
+
+    //renk kodu
 }
