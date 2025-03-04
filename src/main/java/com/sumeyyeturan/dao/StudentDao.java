@@ -605,7 +605,7 @@ public class StudentDao implements IDaoGenerics<StudentDto> {
 
     // Exit
     public void chooiseExit() {
-        System.out.println("Sistemden çıkılıyor...");
+        System.out.println("Sistemden çıkılıyooo...");
         scanner.close();
         return;
     }
