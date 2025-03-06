@@ -1,5 +1,7 @@
 package com.sumeyyeturan;
+
 import com.sumeyyeturan.controller.StudentController;
+import com.sumeyyeturan.controller.TeacherController;
 import com.sumeyyeturan.dao.TeacherDao;
 import java.util.Scanner;
 
@@ -50,8 +52,10 @@ public class MainTest {
     // TEACHER
     private static void teacher() {
         try {
-            TeacherDao teacherDao = new TeacherDao();
-            teacherDao.chooise();
+            TeacherController teacherController= new TeacherController();
+            //TeacherDao teacherDao = new TeacherDao();
+            //teacherDao.chooise();
+            teacherController.chooise();
         } catch (Exception e) {
             e.printStackTrace();
         }
