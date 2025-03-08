@@ -1,6 +1,6 @@
 package com.sumeyyeturan.tutoriaals.oop.accessmodifierother;
 
-import com.accessmodifiersame.Student;
+import com.sumeyyeturan.tutoriaals.oop.accessmodifiersame.Student;
 
 public class Manager {
     public static void main(String[] args) {
