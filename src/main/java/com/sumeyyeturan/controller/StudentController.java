@@ -6,6 +6,7 @@ import com.sumeyyeturan.dto.StudentDto;
 import com.sumeyyeturan.utils.SpecialColor;
 
 import java.util.List;
+import java.util.Optional;
 
 public class StudentController implements IDaoGenerics<StudentDto> {
 
@@ -19,10 +20,12 @@ public class StudentController implements IDaoGenerics<StudentDto> {
 
     // CREATE
     @Override
-    public StudentDto create(StudentDto studentDto) {
-        StudentDto createdStudent = studentDao.create(studentDto);
+    public Optional<StudentDto> create(StudentDto studentDto) {
+        Optional<StudentDto> createdStudent = studentDao.create(studentDto);
+
         if (createdStudent == null) {
             System.out.println(SpecialColor.RED + "❌ Öğrenci oluşturulamadı. Geçerli bilgiler giriniz." + SpecialColor.RESET);
+            return Optional.empty(); // Eğer öğrenci oluşturulamazsa boş Optional dön
         }
         return createdStudent;
     }
@@ -30,13 +33,13 @@ public class StudentController implements IDaoGenerics<StudentDto> {
 
     // FIND BY NAME
     @Override
-    public StudentDto findByName(String name) {
+    public Optional<StudentDto> findByName(String name) {
         return studentDao.findByName(name);
     }
 
     @Override
-    public StudentDto findById(int id) {
-        return null;
+    public Optional<StudentDto> findById(int id) {
+        return studentDao.findById(id);
     }
 
     // LIST
@@ -47,14 +50,14 @@ public class StudentController implements IDaoGenerics<StudentDto> {
 
     // UPDATE
     @Override
-    public StudentDto update(int id, StudentDto studentDto) {
+    public Optional<StudentDto> update(int id, StudentDto studentDto) {
         return studentDao.update(id, studentDto);
     }
 
     // DELETE
     @Override
-    public StudentDto delete(int id) {
-        return studentDao.delete(id);
+    public Optional<StudentDto> delete(int id) {
+        return studentDao.delete(id) ;
     }
 
     // CHOOISE(Switch-case)

@@ -2,7 +2,7 @@ package com.sumeyyeturan.tutoriaals._5_week;
 
 import java.util.*;
 
-public class Week5_09_SetData {
+public class Week5_109_SetData {
     // HASHSET: Tekrarsız veriler
     public static void setHashSet(){
         // Diamon operators: 1.7

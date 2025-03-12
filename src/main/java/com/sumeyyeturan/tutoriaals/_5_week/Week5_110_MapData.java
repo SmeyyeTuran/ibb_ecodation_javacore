@@ -2,7 +2,7 @@ package com.sumeyyeturan.tutoriaals._5_week;
 
 import java.util.*;
 
-public class Week5_10_MapData {
+public class Week5_110_MapData {
 
     private static void hashMapData(){
         Map<String,String> frontendList=new HashMap<>();

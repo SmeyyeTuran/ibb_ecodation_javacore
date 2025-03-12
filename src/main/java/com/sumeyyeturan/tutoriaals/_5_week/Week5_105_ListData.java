@@ -2,7 +2,7 @@ package com.sumeyyeturan.tutoriaals._5_week;
 
 import java.util.*;
 
-public class Week5_05_ListData {
+public class Week5_105_ListData {
 
     public static void arraylistValue() {
         // Diamond operators: 1.7

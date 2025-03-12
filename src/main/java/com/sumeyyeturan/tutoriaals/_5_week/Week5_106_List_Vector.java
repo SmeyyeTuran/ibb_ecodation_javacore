@@ -2,7 +2,7 @@ package com.sumeyyeturan.tutoriaals._5_week;
 
 import java.util.Vector;
 
-public class Week5_06_List_Vector {
+public class Week5_106_List_Vector {
 
     // VECTOR
     private static void vectorNoGenericsData(){
