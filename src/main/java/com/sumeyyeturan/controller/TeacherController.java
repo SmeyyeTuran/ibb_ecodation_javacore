@@ -2,10 +2,12 @@ package com.sumeyyeturan.controller;
 
 import com.sumeyyeturan.dao.IDaoGenerics;
 import com.sumeyyeturan.dao.TeacherDao;
+import com.sumeyyeturan.dto.StudentDto;
 import com.sumeyyeturan.dto.TeacherDto;
 import com.sumeyyeturan.utils.SpecialColor;
 
 import java.util.List;
+import java.util.Optional;
 
 public class TeacherController implements IDaoGenerics<TeacherDto> {
 
@@ -19,23 +21,23 @@ public class TeacherController implements IDaoGenerics<TeacherDto> {
 
     // CREATE
     @Override
-    public TeacherDto create(TeacherDto teacherDto) {
-        TeacherDto createdStudent = teacherDao.create(teacherDto);
-        if (createdStudent == null) {
+    public Optional<TeacherDto> create(TeacherDto teacherDto) {
+        Optional<TeacherDto> createdTeacher = teacherDao.create(teacherDto);
+        if (createdTeacher == null) {
             System.out.println(SpecialColor.RED + "❌ Öğretmen oluşturulamadı. Geçerli bilgiler giriniz." + SpecialColor.RESET);
         }
-        return createdStudent;
+        return createdTeacher;
     }
 
 
     // FIND BY NAME
     @Override
-    public TeacherDto findByName(String name) {
-        return teacherDao.findByName(name);
+    public Optional<TeacherDto> findByName(String name) {
+        return teacherDao.findByName(name) ;
     }
 
     @Override
-    public TeacherDto findById(int id) {
+    public Optional<TeacherDto> findById(int id) {
         return null;
     }
 
@@ -47,13 +49,13 @@ public class TeacherController implements IDaoGenerics<TeacherDto> {
 
     // UPDATE
     @Override
-    public TeacherDto update(int id, TeacherDto teacherDto) {
+    public Optional<TeacherDto> update(int id, TeacherDto teacherDto) {
         return teacherDao.update(id, teacherDto);
     }
 
     // DELETE
     @Override
-    public TeacherDto delete(int id) {
+    public Optional<TeacherDto> delete(int id) {
         return teacherDao.delete(id);
     }
 
