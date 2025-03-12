@@ -3,6 +3,7 @@ package com.sumeyyeturan.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+
 /**
  * @param personDto
  * @param subject
