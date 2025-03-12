@@ -85,5 +85,4 @@ abstract public class PersonDto {
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
-
 }
