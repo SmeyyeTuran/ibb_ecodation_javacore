@@ -296,7 +296,6 @@ public class TeacherDao implements IDaoGenerics<TeacherDto> {
         );
     }
 
-
     private void updateTeacher() {
         System.out.print("Güncellenecek öğretmenin ID'si: ");
         int id = scanner.nextInt();
