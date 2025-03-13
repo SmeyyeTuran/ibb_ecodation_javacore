@@ -8,6 +8,6 @@ public interface IFileHandlerInterface {
     // Dosya Yaz
     void writeFile(String data);
 
-    // Dosya Oku
+    // Dosya Oku -
     void readFile(String data);
 }
